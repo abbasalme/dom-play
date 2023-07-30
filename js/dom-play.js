@@ -16,8 +16,7 @@
 
 //document.querySelector(".hamlet").style.backgroundColor="yellow";
 
-function highlight(el){
-
+for(const mySpan of spans){
     if(el.style.backgroundColor == 'white'){//orange
         el.style.backgroundColor='orange';
     }else{//white
@@ -27,13 +26,29 @@ function highlight(el){
 }
     
 function myAlert(){
-    alert("I am Clicked!");
+    alert("I am Clicked! ");
 }
+
+function highlightActor(actor){
+    //alert("Hi, I'm " + actor);
+    for(const mySpan of spans){
+        if(actor == mySpan.dataset.actor){//current actor
+            mySpan.style.backgroundColor='orange';
+        }else{//other actor
+            mySpan.style.backgroundColor='white';
+        }
+    }
+}
+
 
 const spans = document.querySelectorAll("#play span");
 console.log(spans);
 
 
 for(const mySpan of spans){
-    mySpan.addEventListener("click", myAlert);
+    // mySpan.addEventListener("click", myAlert);
+    mySpan.addEventListener("click",function(ev){
+        highlightActor(mySpan.dataset.actor);
+    });
+    //alert(mySpan.dataset.actor);
 }
