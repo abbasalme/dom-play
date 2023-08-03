@@ -16,28 +16,30 @@
 
 //document.querySelector(".hamlet").style.backgroundColor="yellow";
 
-for(const mySpan of spans){
-    if(el.style.backgroundColor == 'white'){//orange
-        el.style.backgroundColor='orange';
-    }else{//white
-        el.style.backgroundColor='white';
-    }
+function highlight (el){
 
-}
+    if(el.style.backgroundColor == 'white'){//orange
+        el.style.backgroundColor= 'orange';
+    }else{//white
+        el.style.backgroundColor= 'white';
+    }    
+   
+ }
     
 function myAlert(){
     alert("I am Clicked! ");
 }
 
 function highlightActor(actor){
-    //alert("Hi, I'm " + actor);
+    //alert("Hi i am "+ actor);
     for(const mySpan of spans){
-        if(actor == mySpan.dataset.actor){//current actor
-            mySpan.style.backgroundColor='orange';
-        }else{//other actor
-            mySpan.style.backgroundColor='white';
-        }
-    }
+
+    if(actor == mySpan.dataset.actor){//orange
+        mySpan.style.backgroundColor='orange';
+    }else{//white
+        mySpan.style.backgroundColor='white';
+    }  
+  }
 }
 
 
@@ -52,3 +54,4 @@ for(const mySpan of spans){
     });
     //alert(mySpan.dataset.actor);
 }
+
